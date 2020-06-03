@@ -1,0 +1,16 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+
+.header-container {
+  height: $header-heigth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-first;
+
+  > h1 {
+    font-size: $size-bigger;
+    font-weight: bold;
+    color: $color-second;
+  }
+}
