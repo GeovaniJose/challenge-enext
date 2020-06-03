@@ -1,0 +1,66 @@
+@import '../../styles/mixins';
+@import '../../styles/fonts';
+@import '../../styles/colors';
+@import '../../styles/sizes';
+
+.form-breed-container {
+  width: fit-content;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-light;
+  @include border-radius(30px);
+  @include box-shadow(15px, 15px, 2px, 0);
+
+  form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px 0;
+
+    h1 {
+      font-size: $size-big;
+      font-weight: bold;
+      line-height: 30px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: $color-first;
+    }
+
+    input, select {
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      font-size: $size-base;
+      outline: none;
+      border: none;
+      @include border-radius(8px);
+      font-family: $font-first;
+      color: $color-dark;
+      @include box-shadow(5px, 5px, 2px, 0);
+    }
+
+    button[type=submit] {
+      height: 40px;
+      border: 2px solid $color-first;
+      @include border-radius(8px);
+      outline: none;
+      font-family: $font-first;
+      font-size: $size-base;
+      font-weight: bold;
+      color: $color-second;
+      text-transform: uppercase;
+      background-color: $color-first;
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid $color-first;
+        color: $color-first;
+        background-color: $color-second;
+      }
+
+      &:active {
+        @include opacity();
+      }
+    }
+  }
+}
