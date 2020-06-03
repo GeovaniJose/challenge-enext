@@ -5,10 +5,15 @@
 
 body {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: $color-first;
   font-family: $font-first;
 
   .App {
-    height: 100vh;
+    min-height: 100vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 }

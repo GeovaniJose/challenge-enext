@@ -1,0 +1,57 @@
+@import '../../styles/mixins';
+@import '../../styles/fonts';
+@import '../../styles/colors';
+@import '../../styles/sizes';
+
+.list-breed-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  // min-width: 400px;
+  margin-left: 50px;
+  padding: 30px 50px 10px;
+  background-color: $color-light;
+  @include border-radius(30px);
+  @include box-shadow(15px, 15px, 2px, 0);
+
+  h1 {
+    font-size: $size-big;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: $color-first;
+  }
+
+  .list-breed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 30px;
+
+    .item-breed {
+      // width: 100%;
+      @include border-radius(8px);
+      overflow: hidden;
+      color: $color-second;
+      background-color: $color-first;
+      @include box-shadow(10px, 10px, 2px, 0);
+      transition: all .3s;
+
+      &:hover {
+        @include box-shadow(10px, -10px, 2px, 0, rgba(0, 0, 0, 0.1));
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .desc-breed {
+        padding: 5px 20px 10px;
+
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

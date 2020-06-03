@@ -1,8 +1,8 @@
 // Mixins
-@mixin box-shadow($horiz , $vert , $blur , $spread){
-  -webkit-box-shadow: $horiz $vert $blur $spread rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: $horiz $vert $blur $spread rgba(0, 0, 0, 0.05);
-          box-shadow: $horiz $vert $blur $spread rgba(0, 0, 0, 0.05);
+@mixin box-shadow($horiz , $vert , $blur , $spread, $color: rgba(0, 0, 0, 0.05)){
+  -webkit-box-shadow: $horiz $vert $blur $spread $color;
+     -moz-box-shadow: $horiz $vert $blur $spread $color;
+          box-shadow: $horiz $vert $blur $spread $color;
 }
 
 @mixin border-radius ($value) {
