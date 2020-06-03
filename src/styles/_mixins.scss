@@ -1,0 +1,23 @@
+// Mixins
+@mixin box-shadow($horiz , $vert , $blur , $spread){
+  -webkit-box-shadow: $horiz $vert $blur $spread rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: $horiz $vert $blur $spread rgba(0, 0, 0, 0.05);
+          box-shadow: $horiz $vert $blur $spread rgba(0, 0, 0, 0.05);
+}
+
+@mixin border-radius ($value) {
+  -webkit-border-radius: $value;
+     -moz-border-radius: $value;
+          border-radius: $value;
+  // keeps background from busting out of border 
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+@mixin opacity ( $value: 0.5 ) {
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $value * 100 ")";
+  filter: alpha(opacity= $value * 100 );
+  zoom: 1;
+}
