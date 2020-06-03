@@ -1,0 +1,14 @@
+// Base
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: $color-first;
+  font-family: $font-first;
+
+  .App {
+    height: 100vh;
+  }
+}
