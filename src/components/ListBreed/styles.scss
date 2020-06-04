@@ -29,10 +29,8 @@
     grid-gap: 30px;
 
     .item-breed {
-      // width: 100%;
       @include border-radius(8px);
       overflow: hidden;
-      color: $color-second;
       background-color: $color-first;
       @include box-shadow(10px, 10px, 2px, 0);
       transition: all .3s;
@@ -47,9 +45,14 @@
 
       .desc-breed {
         padding: 5px 20px 10px;
+        font-size: $size-medium;
 
         strong {
           font-weight: bold;
+        }
+
+        p {
+          text-transform: capitalize;
         }
       }
     }
