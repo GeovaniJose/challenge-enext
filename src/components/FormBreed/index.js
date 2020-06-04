@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
+import Toast from '../Toast/index'
+
 import api from '../../services/api'
+import storage from '../../services/storage'
+import EventEmitter from '../../services/event'
 
 import './styles.scss'
 
@@ -15,7 +19,7 @@ const optionFonts = [
 
 // Itens para o select das cores
 const optionColors = [
-  { label: "Mars Green" , value: "text-color-1" },
+  { label: "Ice White" , value: "text-color-1" },
   { label: "Factory Yellow" , value: "text-color-2" },
   { label: "Royal Blue" , value: "text-color-3" },
   { label: "Bright Red" , value: "text-color-4" },
@@ -28,6 +32,7 @@ const FormBreed = () => {
   const [breed, setBreed] = useState("")
   const [font, setFont] = useState("")
   const [color, setColor] = useState("")
+  const [dogImgUrl, setDogImgUrl] = useState("")
 
   // Itens para o select das raças
   const [optionBreeds, setOptionBreeds] = useState([])
@@ -35,7 +40,7 @@ const FormBreed = () => {
   useEffect(() => {
     // Using an IIFE async
     (async () => {
-      const response = await api.get('list/all')
+      const response = await api.get('breeds/list/all')
 
       // Fetching breeds from API
       setOptionBreeds(Object.keys(response.data.message).map(breed => (
@@ -44,15 +49,28 @@ const FormBreed = () => {
     })()
   }, [])
 
+  useEffect(() => {
+    (async () => {
+      const response = await api.get(`breed/${breed}/images/random`)
+
+      setDogImgUrl(response.data.message)
+    })()
+  }, [breed])
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    console.log(`
-      Name: ${name}
-      Breed: ${breed}
-      Font: ${font}
-      Color: ${color}
-    `)
+    const newDog = {
+      name,
+      breed,
+      font,
+      color,
+      imgUrl: dogImgUrl
+    }
+    storage.store(newDog)
+
+    EventEmitter.dispatch('addNewDog', e)
+    EventEmitter.dispatch('showToast', e)
 
     resetForm()
   }
@@ -118,6 +136,8 @@ const FormBreed = () => {
 
         <button type="submit">Save</button>
       </form>
+
+      <Toast message="Lovely dog successfully added" />
     </div>
   )
 }
