@@ -14,6 +14,12 @@ const ListBreed = () => {
     EventEmitter.subscribe('addNewDog', (event) => setListDogs(storage.index()))
   }, [listDogs])
 
+  const handleDeleteDog = (dogId) => {
+    setListDogs(listDogs.filter((dog) => dog._id !== dogId))
+    
+    storage.destroy(dogId)
+  }
+
   return (
     <div className="list-breed-container">
       <h1>My Lovely Dogs</h1>
@@ -25,6 +31,10 @@ const ListBreed = () => {
               <strong>{dog.name}</strong>
               <p>{dog.breed}</p>
             </div>
+            <button
+              className="delete-breed"
+              onClick={(e) => handleDeleteDog(dog._id)}
+            >Delete</button>
           </li>
         ))}
       </ul>

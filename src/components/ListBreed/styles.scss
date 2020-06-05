@@ -29,9 +29,10 @@
     grid-gap: 30px;
 
     .item-breed {
-      @include border-radius(8px);
+      position: relative;
       overflow: hidden;
       background-color: $color-first;
+      @include border-radius(8px);
       @include box-shadow(10px, 10px, 2px, 0);
       transition: all .3s;
 
@@ -54,6 +55,39 @@
         p {
           text-transform: capitalize;
         }
+      }
+
+      .delete-breed {
+        visibility: hidden;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        font-family: $font-first;
+        font-size: $size-small;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $color-danger;
+        background-color: $color-light;
+        @include opacity();
+        border: none;
+        outline: none;
+        text-decoration: none;
+        cursor: pointer;
+        
+
+        &:hover {
+          color: $color-second;
+          background-color: $color-danger;
+          @include opacity(1);
+        }
+
+        &:active {
+          @include opacity();
+        }
+      }
+
+      &:hover > .delete-breed {
+        visibility: visible;
       }
     }
   }

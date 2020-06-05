@@ -16,6 +16,7 @@
   background-color: $color-light;
   @include border-radius(30px);
   @include box-shadow(15px, 15px, 2px, 0);
+  z-index: 100;
 
   form {
     flex: 1;

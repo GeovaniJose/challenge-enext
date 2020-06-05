@@ -20,6 +20,15 @@ const storage = {
 
     // Add list in storage
     localStorage.setItem('@ourbreeds/listDogs', JSON.stringify(newListDogs))
+  },
+
+  destroy (dogId) {
+    const listDogs = this.index()
+
+    const newListDogs = listDogs.filter((dog) => dog._id !== dogId)
+
+    // Add list in storage
+    localStorage.setItem('@ourbreeds/listDogs', JSON.stringify(newListDogs))
   }
 }
 
