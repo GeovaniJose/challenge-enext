@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/challenge-enext/static/css/main.a43f3ec2.chunk.css",
+    "main.js": "/challenge-enext/static/js/main.fdf8caf7.chunk.js",
+    "main.js.map": "/challenge-enext/static/js/main.fdf8caf7.chunk.js.map",
+    "runtime-main.js": "/challenge-enext/static/js/runtime-main.5e180bc2.js",
+    "runtime-main.js.map": "/challenge-enext/static/js/runtime-main.5e180bc2.js.map",
+    "static/js/2.db799efa.chunk.js": "/challenge-enext/static/js/2.db799efa.chunk.js",
+    "static/js/2.db799efa.chunk.js.map": "/challenge-enext/static/js/2.db799efa.chunk.js.map",
+    "index.html": "/challenge-enext/index.html",
+    "precache-manifest.0fe1cd2247a0bcb85e553520fca221b1.js": "/challenge-enext/precache-manifest.0fe1cd2247a0bcb85e553520fca221b1.js",
+    "service-worker.js": "/challenge-enext/service-worker.js",
+    "static/css/main.a43f3ec2.chunk.css.map": "/challenge-enext/static/css/main.a43f3ec2.chunk.css.map",
+    "static/js/2.db799efa.chunk.js.LICENSE.txt": "/challenge-enext/static/js/2.db799efa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5e180bc2.js",
+    "static/js/2.db799efa.chunk.js",
+    "static/css/main.a43f3ec2.chunk.css",
+    "static/js/main.fdf8caf7.chunk.js"
+  ]
+}
